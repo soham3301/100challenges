@@ -20,42 +20,40 @@ password_letter = []
 password_number = []
 password_symbol = []
 
-for letter_no in range(0, your_letters):
+for _ in range(0, your_letters):
     random_no_for_letters = random.randint(0, len(letters) - 1)
     password_letter.append(letters[random_no_for_letters])
 
-for number_no in range(0, your_numbers):
+for _ in range(0, your_numbers):
     random_no_for_numbers = random.randint(0, len(numbers) - 1)
     password_number.append(numbers[random_no_for_numbers])
 
-for symbol_no in range(0, your_symbols):
+for _ in range(0, your_symbols):
     random_no_for_symbols = random.randint(0, len(symbols) - 1)
     password_symbol.append(symbols[random_no_for_symbols])
 
 final_password_list = []
 
-for entry in range(0, len(password_letter)):
+for _ in range(0, len(password_letter)):
     random_entry = random.randint(0, len(password_letter) - 1)
     final_password_list.append(password_letter[random_entry])
     password_letter.pop(random_entry)
 
-for entry in range(0, len(password_number)):
+for _ in range(0, len(password_number)):
     random_entry = random.randint(0, len(password_number) - 1)
     final_password_list.append(password_number[random_entry])
     password_number.pop(random_entry)
 
-for entry in range(0, len(password_symbol)):
+for _ in range(0, len(password_symbol)):
     random_entry = random.randint(0, len(password_symbol) - 1)
     final_password_list.append(password_symbol[random_entry])
     password_symbol.pop(random_entry)
 
-print(final_password_list)
+# random.shuffle() is the easy option
 list_length = len(final_password_list)
-
 final_password_mixed = random.sample(final_password_list, k=list_length)
 
 final_password = ""
-
 for char in final_password_mixed:
     final_password = final_password + str(char)
 
