@@ -1,11 +1,3 @@
-# 1. type 'encode' to encrypt, 'decode' to decrypt.
-# 2. if 'encode' then --->
-# 3. type your messege (without space).
-# 4. type the shift number. (shift goes right hand side)
-# 5. display the encoded messege.
-# 6. ask user to try it again or not.
-# 7. same way decode works. in decode the shift goes left hand side.
-
 letters_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 def encode_or_decode():
