@@ -45,7 +45,7 @@ def main():
                 encoded_message = message_encoding_and_decoding(the_message, the_shift_number)
                 display_mutated_message(encoded_message, "encoded")
             elif user_choice == 'decode':
-                the_shift_number = -the_shift_number
+                the_shift_number = -1 * the_shift_number
                 decoded_message = message_encoding_and_decoding(the_message, the_shift_number)
                 display_mutated_message(decoded_message, "decoded")
         else:
