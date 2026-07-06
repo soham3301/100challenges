@@ -12,6 +12,7 @@ def message_encoding_and_decoding(received_message, shift_number):
     the_message_as_list = list(received_message)
     coded_message_list = []
     coded_message = ""
+    shift_number %= 26
     for chars in the_message_as_list:
         the_shift_index = letters_list.index(chars) + shift_number
         if the_shift_index >= 26:
