@@ -111,6 +111,8 @@ def winner_calc():
         print("DRAW")
         final_score_display()
 
+#? ========================================   HELPERS   ==========================================
+
 def you_over_21():
     your_latest_score = latest_score(your_deck)
     if your_latest_score > 21:
@@ -124,8 +126,6 @@ def dealer_over_21():
         return True
     else:
         return False
-
-#? ========================================   HELPERS   ==========================================
 
 def dealers_first_card_display():
     print(f"Dealers First Card: {dealer_deck[0]}")
@@ -172,8 +172,6 @@ def ace_correction(the_deck):
         if 11 in the_deck:
             ace_index = the_deck.index(11)
             the_deck[ace_index] = 1
-
-
 
 #! ========================================   MAIN   ==========================================
 def main():
