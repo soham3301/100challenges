@@ -49,19 +49,13 @@ def calculation(user_input, the_number):
         print("Too Low, Guess Again")
         return True
 
-def play_again():
-    user_consent = input("Play Again? Y / N\n").lower()
-    if user_consent == "y":
-        return True
-    else:
-        print("Thanks for playing The Number Guessing Game. See You.")
-        return False
-
 def main():
     game_running = True
     while game_running:
         difficulty_level = game_mode_selector()
         the_game(difficulty_level)
-        game_running = play_again()
+        game_running = input("Play Again? Y / N\n").lower() == "y"
+        if not game_running:
+            print("Thanks for playing The Number Guessing Game. See You.")
 
 main()
