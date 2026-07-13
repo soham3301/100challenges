@@ -76,8 +76,41 @@ celeb_data = [
     },
 ]
 
-"""
-Justin Bieber (Musician) – Canada - 295
-"""
-print(higher_lower_logo)
-print(the_vs_logo)
+celeb_copy = celeb_data.copy()
+
+def display_compare_a():
+    print("Compare A: Cristiano Ronaldo, a Footballer, from Portugal.")
+    return "followers of cr"
+
+def display_compare_b():
+    print("Compare B: Rihana, a Musician, from Barbados.")
+    return "followers of rh"
+
+def display_board():
+    print(higher_lower_logo)
+    f1 = display_compare_a()
+    print(the_vs_logo)
+    f2 = display_compare_b()
+    return f1, f2
+
+def ask_user():
+    user_choice = input("Who has more followers? Type 'A' or 'B': ").lower()
+    return user_choice
+
+def result_calculator(number_of_a, number_of_b, user_choice):
+    print(number_of_a, number_of_b, user_choice)
+    if user_choice == "a":
+        return True
+    else:
+        return False
+
+def main():
+    while True:
+        comp_a_number, comp_b_number = display_board()
+        user_input = ask_user()
+        game_stopper = result_calculator(comp_a_number, comp_b_number, user_input)
+        if not game_stopper:
+            print("You Lost.")
+            break
+
+main()
