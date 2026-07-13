@@ -5,6 +5,7 @@ dealer_deck = []
 
 def want_to_play():
     user_consent = input("Do you want to play a game of BlackJack? Type 'y' or 'n'\n").lower()
+    print("\n" * 20)
     if user_consent == "y":
         blackjack()
         return True
