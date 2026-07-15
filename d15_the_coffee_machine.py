@@ -19,6 +19,20 @@
 # liquid ingredients have units in ml, coffee has units in gram. prices are calculated in INR.
 # Admin only thing -> the prices of ingredients are only for admin, milk and water are in ml, whereas coffee is in gram. price is based on INR.
 
+machine_logo = '''
+▗▄▄▄▖▗▖ ▗▖▗▄▄▄▖     ▗▄▄▖ ▗▄▖ ▗▄▄▄▖▗▄▄▄▖▗▄▄▄▖▗▄▄▄▖    ▗▖  ▗▖ ▗▄▖  ▗▄▄▖▗▖ ▗▖▗▄▄▄▖▗▖  ▗▖▗▄▄▄▖
+  █  ▐▌ ▐▌▐▌       ▐▌   ▐▌ ▐▌▐▌   ▐▌   ▐▌   ▐▌       ▐▛▚▞▜▌▐▌ ▐▌▐▌   ▐▌ ▐▌  █  ▐▛▚▖▐▌▐▌   
+  █  ▐▛▀▜▌▐▛▀▀▘    ▐▌   ▐▌ ▐▌▐▛▀▀▘▐▛▀▀▘▐▛▀▀▘▐▛▀▀▘    ▐▌  ▐▌▐▛▀▜▌▐▌   ▐▛▀▜▌  █  ▐▌ ▝▜▌▐▛▀▀▘
+  █  ▐▌ ▐▌▐▙▄▄▖    ▝▚▄▄▖▝▚▄▞▘▐▌   ▐▌   ▐▙▄▄▖▐▙▄▄▖    ▐▌  ▐▌▐▌ ▐▌▝▚▄▄▖▐▌ ▐▌▗▄█▄▖▐▌  ▐▌▐▙▄▄▖
+'''
+
+admin_logo = '''
+ ▗▄▖ ▗▄▄▄  ▗▖  ▗▖▗▄▄▄▖▗▖  ▗▖    ▗▄▄▖  ▗▄▖ ▗▖  ▗▖▗▄▄▄▖▗▖   
+▐▌ ▐▌▐▌  █ ▐▛▚▞▜▌  █  ▐▛▚▖▐▌    ▐▌ ▐▌▐▌ ▐▌▐▛▚▖▐▌▐▌   ▐▌   
+▐▛▀▜▌▐▌  █ ▐▌  ▐▌  █  ▐▌ ▝▜▌    ▐▛▀▘ ▐▛▀▜▌▐▌ ▝▜▌▐▛▀▀▘▐▌   
+▐▌ ▐▌▐▙▄▄▀ ▐▌  ▐▌▗▄█▄▖▐▌  ▐▌    ▐▌   ▐▌ ▐▌▐▌  ▐▌▐▙▄▄▖▐▙▄▄▖
+'''
+
 drinks = {
     "espresso":{
         "ingredients":{
@@ -67,6 +81,7 @@ ingredients_purchase_cost = {
 notes_accepted = [10, 20, 50, 100]
 
 def display_board():
+    print(machine_logo)
     print("What would you like? (espresso / latte / cappuccino)")
 
 def the_user_input():
@@ -217,6 +232,7 @@ def machine_filled_up(data):
 def admin_panel(the_data):
     print("Welcome to admin panel.")
     while True:
+        print(admin_logo)
         report(the_data)
         space_left_for_water = 1500 - the_data["storage"]["water"]
         space_left_for_coffee = 300 - the_data["storage"]["coffee"]
@@ -290,7 +306,6 @@ def main():
     while True:
         display_board()
         machine_running, user_input = the_user_input()
-        # print(f"Cash at source: {all_copy_dict["cash"]}, Cash box value: {cash_box}")
         if not machine_running:
             print("Thanks for using coffee machine. Have a productive day.")
             break
