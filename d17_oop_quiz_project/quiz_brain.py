@@ -32,3 +32,23 @@ class QuizBrain:
                 print("Game Ends")
                 print(f"Your Final Score: {self.score}")
                 break
+    
+    def next_question_API(self):
+        for object in self.question_list:
+            user_choice = input(f"Q. {self.question_no + 1}: {object.text} (True / False)\n").title()
+            if user_choice != object.q_correct_ans:
+                print('Your answer is Wrong.')
+                print(f"Your final score: {self.score}")
+                break
+            elif self.question_no <= len(self.question_list):
+                print("Correct")
+                self.question_no += 1
+                self.score += 1
+                if self.question_no == len(self.question_list):
+                    print("Game Ends")
+                    print(f"Your Final Score: {self.score}")
+                    break
+            else:
+                print("Game Over.")
+                print(f"Your Final Score: {self.score}")
+                break
