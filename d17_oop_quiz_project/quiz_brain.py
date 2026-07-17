@@ -14,21 +14,21 @@ class QuizBrain:
     
     def next_question(self):
         for object in self.question_list:
-                user_choice = input(f"Q. {self.question_no + 1}: {object.text} (True / False)\n").title()
-                correct_answer = object.answer
-                if user_choice != correct_answer:
-                    print("Your Answer is Wrong.")
-                    print(f"Your Final Score: {self.score}")
-                    break
-                elif self.question_no <= len(self.question_list):
-                    print("Correct")
-                    self.question_no += 1
-                    self.score += 1
-                    if self.question_no == len(self.question_list):
-                        print("Game Ends")
-                        print(f"Your Final Score: {self.score}")
-                        break
-                else:
+            user_choice = input(f"Q. {self.question_no + 1}: {object.text} (True / False)\n").title()
+            correct_answer = object.answer
+            if user_choice != correct_answer:
+                print("Your Answer is Wrong.")
+                print(f"Your Final Score: {self.score}")
+                break
+            elif self.question_no <= len(self.question_list):
+                print("Correct")
+                self.question_no += 1
+                self.score += 1
+                if self.question_no == len(self.question_list):
                     print("Game Ends")
                     print(f"Your Final Score: {self.score}")
                     break
+            else:
+                print("Game Ends")
+                print(f"Your Final Score: {self.score}")
+                break
