@@ -33,7 +33,7 @@ while game_is_on:
     if all_cars:
         for car in all_cars:
             if car.distance(player) < 20:
-                print("Game Over")
+                score_baord.game_over()
                 game_is_on = False
 
     if player.ycor() > 570:
@@ -44,4 +44,4 @@ while game_is_on:
             cars.speed_up()
 
             
-
+screen.exitonclick()
