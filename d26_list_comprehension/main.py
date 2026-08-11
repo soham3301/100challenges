@@ -13,5 +13,9 @@ while True:
         break
     else:
         user_input_list = list(user_input)
-        result_list = [received_alphabet_data[letter.upper()] for letter in user_input_list]
-        print(result_list)
+        try:
+            result_list = [received_alphabet_data[letter.upper()] for letter in user_input_list]
+        except KeyError as error_message:
+            print(f"Sorry, only letters in the alphabet please.")
+        else:
+            print(result_list)
