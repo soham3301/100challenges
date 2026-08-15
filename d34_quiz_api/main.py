@@ -1,4 +1,5 @@
 
+import html
 import requests
 
 questions = {
@@ -17,7 +18,7 @@ for question_group in data:
 
 for question, answer in questions.items():
     print(f"Score: {score}")
-    print(f"{question}")
+    print(f"{html.unescape(question)}")
     user_input = input('''
 Type 1 for True
 Type 2 for False
