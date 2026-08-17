@@ -1,0 +1,16 @@
+{
+    "tag_id": 50,
+    "user_input": "ran 3 miles",
+    "duration_min": 30,
+    "met": 9.8,
+    "nf_calories": 360,
+    "photo": {
+        "highres": "https://placeholder.not-a-real-url.com/exercise/50_highres.jpg",
+        "thumb": "https://placeholder.not-a-real-url.com/exercise/50_thumb.jpg",
+        "is_user_uploaded": false
+    },
+    "compendium_code": 12050,
+    "name": "running",
+    "description": null,
+    "benefits": null
+}
